@@ -1,0 +1,1 @@
+# community-trade-fullstack
