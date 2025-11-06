@@ -2,7 +2,7 @@
 
 A simple web application that allows users to post items, browse items from their community, and propose trades with other users. Users can manage their own items, comment on items, and track incoming and outgoing trades. 
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 ---
 
