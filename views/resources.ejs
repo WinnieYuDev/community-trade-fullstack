@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Community Resources</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <p>Welcome to the resources page! Here you'll find a list of local food pantries and library resources available in the Boston community.</p>
+</header>
+  <main class="resources">
+    <section>
+      <h2>Food Pantries</h2>
+      <ul>
+        <% foodPantries.forEach(pantry => { %>
+          <li>
+            <strong><%= pantry.name %></strong><br>
+            Address: <%= pantry.address %><br>
+            Phone: <%= pantry.phone %>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Library Resources</h2>
+      <ul>
+        <% libraries.forEach(library => { %>
+          <li>
+            <strong><%= library.name %></strong><br>
+            Address: <%= library.address %><br>
+            Phone: <%= library.phone %>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

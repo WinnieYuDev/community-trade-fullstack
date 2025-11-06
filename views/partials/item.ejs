@@ -1,0 +1,42 @@
+<li class="item">
+  <% if (item.image) { %>
+    <img src="<%= item.image %>" alt="<%= item.title %>" style="max-width:150px;">
+  <% } %>
+
+  <h3><%= item.title %></h3>
+  <p><%= item.description %></p>
+  <p>Condition: <%= item.condition %></p>
+  <p>Owner: <%= item.owner.email %></p>
+  
+
+  <% if (user && user._id != item.owner._id) { %>
+    <button class="trade-button" data-request="<%= item._id %>">
+      Propose Trade
+    </button>
+  <% } %>
+</li>
+
+<h4>Comments</h4>
+<ul>
+  <% item.comments?.forEach(c => { %>
+    <li>
+      <strong><%= c.user?.email || 'Anonymous' %></strong>: 
+      <%= c.message %>
+    </li>
+  <% }) %>
+</ul>
+
+<% if (user) { %>
+<form action="/item/<%= item._id %>/comment" method="post">
+  <input name="message" placeholder="Leave a comment..." required>
+  <button>Post</button>
+</form>
+<% } %>
+
+<!-- 
+//Citations:
+//Modified code from youtube tutorial: https://www.youtube.com/watch?v=z5UgtXOxEEk
+//Reference code from https://www.mongodb.com/resources/languages/express-mongodb-rest-api-tutorial#setting-up-the-project
+//Use of dotenv package to hide sensitive info: https://www.npmjs.com/package/dotenv
+//Use of Learning Mode on AI tools to help with code structure,syntax and debugging   
+-->

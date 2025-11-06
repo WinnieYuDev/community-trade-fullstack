@@ -1,0 +1,48 @@
+<h2>Your Items</h2>
+<ul>
+  <% myItems.forEach(i => { %>
+    <li>
+      <%= i.title %> — <%= i.available ? "Available" : "Traded" %>
+    </li>
+  <% }) %>
+</ul>
+
+<h2>Incoming Trades</h2>
+<ul>
+  <% incoming.forEach(t => { %>
+    <li data-id="<%= t._id %>">
+      From: <%= t.fromUser ? t.fromUser.email : "Unknown" %><br>
+
+      For your item: <%= t.requestedItem ? t.requestedItem.title : "Item deleted" %><br>
+
+      <%= t.message %><br>
+
+      <p>Status: <strong><%= t.status %></strong></p>
+
+      <% if (t.status === 'pending') { %>
+        <button class="accept-button" data-id="<%= t._id %>">Accept</button>
+        <button class="reject-button" data-id="<%= t._id %>">Reject</button>
+      <% } else { %>
+        <button class="delete-trade-button" data-id="<%= t._id %>">Delete</button>
+      <% } %>
+    </li>
+  <% }) %>
+</ul>
+
+<h2>Outgoing Trades</h2>
+<ul>
+  <% outgoing.forEach(t => { %>
+    <li>
+      To: <%= t.toUser ? t.toUser.email : "Unknown" %> — <%= t.status %><br>
+      For item: <%= t.requestedItem ? t.requestedItem.title : "Item deleted" %>
+    </li>
+  <% }) %>
+</ul>
+
+<!-- 
+//Citations:
+//Modified code from youtube tutorial: https://www.youtube.com/watch?v=z5UgtXOxEEk
+//Reference code from https://www.mongodb.com/resources/languages/express-mongodb-rest-api-tutorial#setting-up-the-project
+//Use of dotenv package to hide sensitive info: https://www.npmjs.com/package/dotenv
+//Use of Learning Mode on AI tools to help with code structure,syntax and debugging   
+-->

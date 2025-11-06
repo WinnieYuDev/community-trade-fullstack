@@ -1,0 +1,63 @@
+<section class="market-place">
+  <h2>Community Trade Market</h2>
+  <p>Browse goods from your community and trade with other users.</p>
+</section>
+
+<section class="market-grid">
+  <% items.forEach(item => { %>
+    <div class="market-card" data-id="<%= item._id %>">
+      <!-- Item image -->
+      <% if (item.image) { %>
+        <img src="<%= item.image %>" alt="<%= item.title %>" />
+      <% } else { %>
+        <img src="/images/placeholder.png" alt="No image" />
+      <% } %>
+      <!-- Item details -->
+      <h3><%= item.title %></h3>
+      <p class="item-owner">Posted by: <%= item.owner?.username || item.owner?.email || "Unknown" %></p>
+      <p class="item-location">Location: <%= item.location %></p>
+      <p class="item-desc"><%= item.description %></p>
+      <p>Condition: <%= item.condition %></p>
+
+      <!-- Trade button (not for owner) -->
+      <% if (user && user._id.toString() !== item.owner._id.toString()) { %>
+        <button class="color-button trade-button" data-request="<%= item._id %>">
+          Request Trade
+        </button>
+      <% } %>
+
+      <!-- Comments Section -->
+      <h4>Comments</h4>
+      <ul class="comments-list">
+        <% item.comments?.forEach(c => { %>
+          <li>
+            <strong><%= c.user?.username || c.user?.email || "Anonymous" %>:</strong> 
+            <%= c.message %>
+          </li>
+        <% }) %>
+      </ul>
+
+      <!-- Add comment form -->
+      <% if (user) { %>
+        <form class="comment-form" data-id="<%= item._id %>">
+          <input name="message" placeholder="Leave a comment..." required />
+          <button type="submit">Post</button>
+        </form>
+      <% } %>
+
+      <!-- Delete button (only for owner) -->
+      <% if (user && user._id.toString() === item.owner._id.toString()) { %>
+        <button class="delete-item-button">Delete Item</button>
+      <% } %>
+      
+    </div>
+  <% }) %>
+</section>
+
+<!-- 
+//Citations:
+//Modified code from youtube tutorial: https://www.youtube.com/watch?v=z5UgtXOxEEk
+//Reference code from https://www.mongodb.com/resources/languages/express-mongodb-rest-api-tutorial#setting-up-the-project
+//Use of dotenv package to hide sensitive info: https://www.npmjs.com/package/dotenv
+//Use of Learning Mode on AI tools to help with code structure,syntax and debugging   
+-->

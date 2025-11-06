@@ -1,0 +1,261 @@
+/******************************************
+/* CSS
+/*******************************************/
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+body {
+  background-color: rgb(46, 29, 42);
+  background-image: url("https://www.transparenttextures.com/patterns/dark-denim-3.png");
+  background-size: repeat;
+  color: rgb(232, 223, 211);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+main {
+  width: 92%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+header {
+  background: rgb(42, 36, 31);
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid rgb(79, 67, 57);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+header h1 a {
+  font-family: "Georgia", serif;
+  color: rgb(232, 223, 211);
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+nav a {
+  color: rgb(217, 201, 184);
+  margin-left: 22px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: rgb(243, 230, 213);
+}
+
+/* button */
+button {
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  transition: 0.2s ease;
+  color: rgb(247, 242, 236);
+}
+
+.color-button {
+  background: rgb(92, 59, 38);
+  border: 2px solid rgb(61, 39, 25);
+}
+.color-button:hover {
+  background: rgb(122, 82, 55);
+}
+
+.btn-success {
+  background: rgb(85, 107, 47);
+}
+.btn-success:hover {
+  background: rgb(111, 138, 65);
+}
+
+.btn-danger {
+  background: rgb(122, 44, 44);
+}
+.btn-danger:hover {
+  background: rgb(148, 58, 58);
+}
+
+/* form */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  background: rgb(45, 38, 33);
+  border: 1px solid rgb(90, 76, 66);
+  color: rgb(232, 223, 211);
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+input:focus, textarea:focus {
+  background: rgb(58, 49, 43);
+  border-color: rgb(140, 110, 84);
+}
+
+.market-place {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 25px;
+  border-radius: 10px;
+  background: rgb(42, 36, 31) url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  background-size: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  border: 2px solid rgb(79, 67, 57);
+}
+
+.market-place h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgb(245, 233, 221);
+}
+
+.market-place p {
+  font-size: 16px;
+  color: rgb(216, 203, 192);
+}
+
+.comments-list {
+  list-style: none; 
+  padding-left: 0;  
+  margin-left: 0;    
+}
+
+.comments-list li {
+  margin-bottom: 8px;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.market-card {
+  background: rgb(45, 38, 33);
+  border: 2px solid rgb(79, 67, 57);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.5);
+  background-image: url('https://www.transparenttextures.com/patterns/ice-age.png');
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.market-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.7);
+}
+
+.market-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 3px solid rgb(92, 77, 65);
+}
+
+.market-card h3 {
+  color: rgb(245, 233, 221);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.item-owner {
+  color: rgb(187, 169, 154);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.item-desc {
+  color: rgb(224, 212, 199);
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.status {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-pending {
+  background: rgb(201, 168, 106);
+  color: rgb(59, 47, 36);
+}
+
+.status-accepted {
+  background: rgb(136, 160, 108);
+  color: rgb(34, 34, 34);
+}
+
+.status-rejected {
+  background: rgb(160, 101, 101);
+  color: rgb(255, 255, 255);
+}
+
+button{
+  background: rgb(99, 55, 22);
+  color: rgb(255, 255, 255);
+}
+
+.resources {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 20px;         
+}
+
+.resources section {
+  flex: 1 1 45%;        
+  box-sizing: border-box;
+}
+
+.resources section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer{
+  text-align: right;
+  padding: 10px 30px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media screen and (max-width: 600px) {
+  form input[type="text"] {
+    width: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* 
+//Citations:
+//Modified code from youtube tutorial: https://www.youtube.com/watch?v=z5UgtXOxEEk
+//Reference code from https://www.mongodb.com/resources/languages/express-mongodb-rest-api-tutorial#setting-up-the-project
+//Use of dotenv package to hide sensitive info: https://www.npmjs.com/package/dotenv
+//Use of Learning Mode on AI tools to help with code structure,syntax and debugging   
+*/

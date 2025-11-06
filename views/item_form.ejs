@@ -1,0 +1,20 @@
+<h2>Post an Item</h2>
+
+<form action="/item" method="post" enctype="multipart/form-data">
+  <input name="title" placeholder="Item name" required>
+  <textarea name="description" placeholder="Description"></textarea>
+  <label>Location:</label> <!-- New field -->
+  <input type="text" name="location" placeholder="City, State">
+
+  <select name="condition">
+    <option>Like New</option>
+    <option>Good</option>
+    <option>Fair</option>
+    <option>Poor</option>
+  </select>
+
+  <label>Upload an image:</label>
+  <input type="file" name="image" accept="image/*">
+
+  <button>Create</button>
+</form>
