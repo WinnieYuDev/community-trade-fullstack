@@ -1,6 +1,6 @@
 # Community Trade
 
-A simple web application that allows users to post items, browse items from their community, and propose trades with other users. Users can manage their own items, comment on items, and track incoming and outgoing trades. Community resources are linked in resource navigation including infromation on food banks and local libraries in the Boston area in a time of harsh food insecurity.
+A simple web application that allows users to post items, browse items from their community, and propose trades with other users. Users can manage their own items, comment on items, and track incoming and outgoing trades. 
 
 ![alt text](image.png)
 
@@ -8,7 +8,7 @@ A simple web application that allows users to post items, browse items from thei
 
 ## Description
 
-**Community Trade** is a Node.js and Express-based web app that integrates with MongoDB for data storage. It allows authenticated users to manage their profiles, post items for trade, and interact with other users’ items.  
+**Community Trade** is a Node.js and Express-based web app that integrates with MongoDB for data storage. It allows authenticated users to manage their profiles, post items for trade, and interact with other users’ items. Community resources are linked in resource navigation including information on food banks and local libraries in the Boston area in a time of harsh food insecurity. 
 
 Each item includes:
 - A **title**
