@@ -1,6 +1,6 @@
 # Community Trade
 
-A simple web application that allows users to post items, browse items from their community, and propose trades with other users. Users can manage their own items, comment on items, and track incoming and outgoing trades.
+A simple web application that allows users to post items, browse items from their community, and propose trades with other users. Users can manage their own items, comment on items, and track incoming and outgoing trades. Community resources are linked in resource navigation including infromation on food banks and local libraries in the Boston area in a time of harsh food insecurity.
 
 ![alt text](image.png)
 
